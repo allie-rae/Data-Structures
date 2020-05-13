@@ -24,7 +24,7 @@ class LinkedList:
         # first node in the list
         self.head = None
 
-    def add(self, value):
+    def add_to(self, value):
         # regardless if list is empty or not,
         # we need to wrap the value in a Node
         new_node = Node(value)
@@ -35,10 +35,10 @@ class LinkedList:
         else:
             # set the new node as the last node in the list
             # we can get to the last node in the list by traversing it
-            self.head.set_next(new_node)
             current = self.head
             while current.get_next() is not None:
                 current = current.get_next()
+
             # we're at the end of the linked list
             current.set_next(new_node)
 
